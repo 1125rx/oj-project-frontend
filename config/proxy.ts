@@ -36,7 +36,7 @@ export default {
   },
   dev: {
     '/api/': {
-      target: 'https://proapi.azurewebsites.net',
+      target: 'http://localhost:8101',
       changeOrigin: true,
       pathRewrite: { '^': '' },
     },
