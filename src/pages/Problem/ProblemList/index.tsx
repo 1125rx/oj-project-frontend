@@ -103,7 +103,7 @@ const TableList: React.FC = () => {
           defaultMessage: 'Enquiry form',
         })}
         pagination={{
-          pageSize: 5,
+          pageSize: 10,
           onChange: (page) => console.log(page),
         }}
         actionRef={actionRef}

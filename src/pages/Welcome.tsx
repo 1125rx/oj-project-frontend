@@ -114,7 +114,7 @@ const Welcome: React.FC = () => {
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用 Ant Design Pro
+            欢迎使用 ZOJ 🔥🔥🔥
           </div>
           <p
             style={{
@@ -126,8 +126,11 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            Ant Design Pro 是一个整合了 umi，Ant Design 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+            在当今数字化时代，编程技能的重要性越发凸显，而在线评测系统作为学习和提升编程技能的重要工具，
+            其在教育和培训领域的应用日益广泛。本毕业设计旨在开发一个全面的在线评测系统，
+            利用现代化的前端技术React和后端框架Spring Boot，为用户提供一个便捷、安全的学习和实践平台。
+            同时，通过自主开发的代码安全沙箱，确保用户能够在安全的环境下进行编程实践，避免因恶意代码或漏洞带来的安全风险。
+            这个项目将深入探索前沿的技术和方法，为教育和培训领域提供创新的解决方案，促进编程技能的传播和提升。
           </p>
           <div
             style={{
@@ -139,20 +142,20 @@ const Welcome: React.FC = () => {
             <InfoCard
               index={1}
               href="https://umijs.org/docs/introduce/introduce"
-              title="了解 umi"
-              desc="umi 是一个可扩展的企业级前端应用框架,umi 以路由为基础的，同时支持配置式路由和约定式路由，保证路由的功能完备，并以此进行功能扩展。"
+              title="了解 项目架构"
+              desc="完整代码在Github🚀"
             />
             <InfoCard
               index={2}
-              title="了解 ant design"
+              title="前往 题库探索"
               href="https://ant.design"
-              desc="antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
+              desc="收集各大oj平台经典题目"
             />
             <InfoCard
               index={3}
-              title="了解 Pro Components"
-              href="https://procomponents.ant.design"
-              desc="ProComponents 是一个基于 Ant Design 做了更高抽象的模板组件，以 一个组件就是一个页面为开发理念，为中后台开发带来更好的体验。"
+              title="体验 在线代码编辑器Monaco"
+              href="https://microsoft.github.io/monaco-editor/"
+              desc="The Monaco Editor is the code editor that powers VS Code. A good page describing the code editor's features is here. It is licensed under the MIT License and supports Edge, Chrome, Firefox, Safari and Opera. The Monaco editor is not supported in mobile browsers or mobile web frameworks. Find more information at the Monaco Editor repo."
             />
           </div>
         </div>

@@ -42,7 +42,7 @@ export default [
         path: '/problem', redirect: '/problem/list'
       },
       {
-        path: '/problem/list', component: './Problem/ProblemList', name: '题库',hideInMenu: true,
+        path: '/problem/list', component: './Problem/ProblemList', name: '题库😍',hideInMenu: true,
       },
       {
         path: '/problem/set/:id', name: '详情页', component: './Problem/ProblemSet', hideInMenu: true,

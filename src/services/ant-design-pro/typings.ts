@@ -11,6 +11,14 @@ declare namespace API {
 
 
   };
+  type UserVOParams = {
+    id?: string;
+    userName?: string;
+    userAvatar?: string;
+    userProfile?: string;
+    userRole?: string;
+    createTime?: Date;
+  }
 
   type GetQuestionBYId = {
     id?: string
@@ -66,7 +74,7 @@ declare namespace API {
     judgeConfig?: JudgeConfig;
     thumbNum?: number;
     favourNum?: number;
-    userId?: number;
+    userVO?: UserVOParams;
     createTime?: Date;
     updateTime?: Date;
   }
