@@ -11,6 +11,10 @@ declare namespace API {
 
 
   };
+
+  type GetQuestionBYId = {
+    id?: string
+  }
   type JudgeCaseBody = {
     input?: string;
     output?: string;

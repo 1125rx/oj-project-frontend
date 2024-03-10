@@ -104,6 +104,12 @@ export async function updateRule(options?: { [key: string]: any }) {
 export async function getApplyListAPI(params: API.QuestionListParams){
   return request<API.BaseResponse<API.QuestionVOBody>>('/api/question/list/vo',{params})
 }
+export async function getQuestionVObyId(params: API.GetQuestionBYId){
+  return request<API.BaseResponse<API.QuestionVOBody>>('/api/question/get/vo',{
+    method: 'POST',
+    data: params,
+  })
+}
 
 /** 新建规则 POST /api/rule */
 export async function addRule(options?: { [key: string]: any }) {

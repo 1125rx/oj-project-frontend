@@ -1,7 +1,7 @@
 import {getQuestionList} from '@/services/ant-design-pro/api';
 import type {ActionType, ProColumns} from '@ant-design/pro-components';
 import {PageContainer, ProTable,} from '@ant-design/pro-components';
-import {useIntl} from '@umijs/max';
+import {history, useIntl} from '@umijs/max';
 import {message, Space, Tag} from 'antd';
 import React, {useRef, useState} from 'react';
 
@@ -30,6 +30,7 @@ const TableList: React.FC = () => {
             onClick={() => {
               setCurrentRow(entity);
               message.success('点击成功！点击题目为：'+entity.title)
+              history.push(`/problem/set/${entity.id}`)
             }}
           >
             {dom}

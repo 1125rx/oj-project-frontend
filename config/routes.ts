@@ -34,10 +34,20 @@ export default [
     component: './Welcome',
   },
   {
-    path: '/problemList',
+    path: '/problem',
     name: '题库',
     icon: 'table',
-    component: './Problem'
+    routes: [
+      {
+        path: '/problem', redirect: '/problem/list'
+      },
+      {
+        path: '/problem/list', component: './Problem/ProblemList', name: '题库',hideInMenu: true,
+      },
+      {
+        path: '/problem/set/:id', name: '详情页', component: './Problem/ProblemSet', hideInMenu: true,
+      }
+    ]
   },
 
   {
