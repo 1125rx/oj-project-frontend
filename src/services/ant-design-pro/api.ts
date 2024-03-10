@@ -2,6 +2,7 @@
 /* eslint-disable */
 import { request } from '@umijs/max';
 
+
 /** 获取当前的用户 GET /api/currentUser */
 export async function currentUser(options?: { [key: string]: any }) {
   return request<{
@@ -20,6 +21,15 @@ export async function outLogin(options?: { [key: string]: any }) {
   });
 }
 
+export async function getQuestionList(params: API.QuestionListParams){
+  return request<API.BaseResponse<API.QuestionVOBody[]>>('/api/question/list/vo',
+    {
+      method: 'POST',
+      data: params,
+    }
+    )
+}
+
 /** 登录接口 POST /api/login/account */
 export async function login(body: API.LoginParams, options?: { [key: string]: any }) {
   return request<API.BaseResponse<API.CurrentUser>>('/api/user/login', {
@@ -31,7 +41,7 @@ export async function login(body: API.LoginParams, options?: { [key: string]: an
     ...(options || {}),
   });
 }
-
+/** 注册接口 POST /api/login/account */
 export async function register(body: API.RegisterParams, options?: { [key: string]: any }) {
   return request<API.BaseResponse<number>>('/api/user/register', {
     method: 'POST',
@@ -39,14 +49,6 @@ export async function register(body: API.RegisterParams, options?: { [key: strin
       'Content-Type': 'application/json',
     },
     data: body,
-    ...(options || {}),
-  });
-}
-
-/** 此处后端没有提供注释 GET /api/notices */
-export async function getNotices(options?: { [key: string]: any }) {
-  return request<API.NoticeIconList>('/api/notices', {
-    method: 'GET',
     ...(options || {}),
   });
 }
@@ -70,7 +72,25 @@ export async function rule(
     ...(options || {}),
   });
 }
-
+/** 获取规则列表 GET /api/rule */
+export async function question(
+  params: {
+    // query
+    /** 当前的页码 */
+    current?: number;
+    /** 页面的容量 */
+    pageSize?: number;
+  },
+  options?: { [key: string]: any },
+) {
+  return request<API.QuestionList>('/api/question/list/page/vo', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
 /** 更新规则 PUT /api/rule */
 export async function updateRule(options?: { [key: string]: any }) {
   return request<API.RuleListItem>('/api/rule', {
@@ -80,6 +100,9 @@ export async function updateRule(options?: { [key: string]: any }) {
       ...(options || {}),
     }
   });
+}
+export async function getApplyListAPI(params: API.QuestionListParams){
+  return request<API.BaseResponse<API.QuestionVOBody>>('/api/question/list/vo',{params})
 }
 
 /** 新建规则 POST /api/rule */

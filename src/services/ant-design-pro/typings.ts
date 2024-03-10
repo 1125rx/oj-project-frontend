@@ -1,6 +1,3 @@
-// @ts-ignore
-/* eslint-disable */
-
 declare namespace API {
   type CurrentUser = {
     userName?: string;
@@ -14,6 +11,61 @@ declare namespace API {
 
 
   };
+  type JudgeCaseBody = {
+    input?: string;
+    output?: string;
+  }
+
+  type AnswerBody = {
+    language?: string;
+    code?: string;
+  }
+
+  type QuestionBody = {
+    id?: number;
+    title?: string;
+    tags?: string;
+    content?: string;
+    answer?: string;
+    submitNum?: number;
+    acceptedNum?: number;
+    judgeCase?: string;
+    judgeConfig?: string;
+    thumbNum?: number;
+    favourNum?: number;
+    userId?: number;
+    createTime?: Date;
+    updateTime?: Date;
+  }
+  type QuestionListParams = {
+    id?: number;
+    title?: string;
+    tags?: string;
+    content?: string;
+    userId?: number;
+  }
+
+  type JudgeConfig = {
+    timeLimit?: number;
+    memoryLimit?: number;
+    stackLimit?: number;
+  }
+
+  type QuestionVOBody = {
+    id?: number;
+    title?: string;
+    content?: string;
+    tags?: string[];
+    sample?: JudgeCaseBody;
+    submitNum?: number;
+    acceptedNum?: number;
+    judgeConfig?: JudgeConfig;
+    thumbNum?: number;
+    favourNum?: number;
+    userId?: number;
+    createTime?: Date;
+    updateTime?: Date;
+  }
 
   type LoginResult = {
     status?: string;
@@ -53,6 +105,23 @@ declare namespace API {
     total?: number;
     success?: boolean;
   };
+  type QuestionList = {
+    data?: QuestionVOBody[];
+    /** 列表的内容总数 */
+    total?: number;
+
+  }
+  type QuestionQueryParams = {
+    id?: number;
+    title?: string;
+    content?: string;
+    tags?: string[];
+    answer?: string;
+    userId?: number;
+    pageSize?: number;
+    current?: number;
+    sortField?: string;
+  }
 
   type FakeCaptcha = {
     code?: number;

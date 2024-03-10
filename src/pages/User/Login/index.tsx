@@ -21,7 +21,6 @@ import Settings from '../../../../config/defaultSettings';
 import React, {useState} from 'react';
 import {flushSync} from 'react-dom';
 import {createStyles} from 'antd-style';
-
 const useStyles = createStyles(({token}) => {
   return {
     action: {
@@ -235,8 +234,8 @@ const Login: React.FC = () => {
                 message: '账号是必填项！',
               },
               {
-                min: 6,
-                message: '账号最少为6位',
+                min: 4,
+                message: '账号最少为4位',
               }
             ]}
           />

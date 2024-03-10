@@ -34,6 +34,13 @@ export default [
     component: './Welcome',
   },
   {
+    path: '/problemList',
+    name: '题库',
+    icon: 'table',
+    component: './Problem'
+  },
+
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
@@ -47,15 +54,16 @@ export default [
         path: '/admin/sub-page',
         name: 'sub-page',
         component: './Admin',
+        hideInMenu: true,
       },
     ],
   },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
+  // {
+  //   name: 'list.table-list',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './TableList',
+  // },
   {
     path: '/',
     redirect: '/welcome',
